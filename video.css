@@ -1,0 +1,29 @@
+
+  /* Video Thumbnail */
+  .video-thumbnail-container {
+    cursor: pointer;
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.2s;
+  }
+  
+  .video-thumbnail:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Video Player */
+  .video-container {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+  }

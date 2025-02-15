@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduLearn | Online Learning Platform</title>
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="video.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="/" class="logo">Edu<span>Learn</span></a>
+      <ul class="nav-menu">
+        <li class="dropdown">
+          <a href="/frontend/courses.html" class="nav-link" onclick="toggleCoursesMenu(event)">Courses</a>
+          <ul class="submenu">
+            <li>
+              <a href="/frontend/courses.html#web-development">
+                <i class="fas fa-code"></i>
+                Web Development
+              </a>
+            </li>
+            <li>
+              <a href="/frontend/courses.html#data-science">
+                <i class="fas fa-chart-line"></i>
+                Data Science
+              </a>
+            </li>
+            <li>
+              <a href="/frontend/courses.html#design">
+                <i class="fas fa-paint-brush"></i>
+                Design
+              </a>
+            </li>
+            <li>
+              <a href="/frontend/courses.html#it-software">
+                <i class="fas fa-laptop"></i>
+                IT & Software
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/frontend/premium.html" class="nav-link">Premium</a></li>
+        <li><a href="#" class="nav-link" onclick="showAuthModal('login')">Login</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="video-page">
+    <!-- Video Player -->
+    <div class="video-container">
+      <video id="new-video" class="video-js vjs-default-skin" controls 
+             preload="auto" width="1280" height="720"
+             poster="https://via.placeholder.com/1280x720">
+        <source id="video-source" src="" type="video/3.mkv">
+      </video>
+    </div>
+  </div>
+  <div class="video-details">
+    <h1 id="video-title">Web Development Basics</h1>
+    <div class="video-metadata">
+      <span class="views">1.2M views</span>
+      <span class="upload-date">2 weeks ago</span>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  <script>
+    // Get the video ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('id');
+
+    // Set the video source based on the ID
+    const videoSource = document.getElementById('video-source');
+    videoSource.src = `video/${videoId}.mp4`; // Replace with your video path
+
+    // Initialize the video player
+    const player = videojs('new-video');
+
+    // Automatically play the video when the page loads
+    player.ready(() => {
+      player.play();
+    });
+
+   
+  </script>
+</body>
+</html>
